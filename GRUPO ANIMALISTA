@@ -1,0 +1,1004 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Julia & Martín Abogados | Defensa Legal Integral y Protección Animal</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            forest: '#1b3b2b',   // Verde boscoso profundo
+                            forestLight: '#2a543f',
+                            gold: '#c5a059',     // Dorado sutil elegante
+                            goldHover: '#b08b46',
+                            navy: '#0f172a',     // Azul marino oscuro
+                            warmGray: '#f8f9fa',
+                            cardGray: '#f1f5f9',
+                            textDark: '#1e293b'
+                        }
+                    },
+                    fontFamily: {
+                        cinzel: ['Cinzel', 'serif'],
+                        sans: ['Inter', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .gold-gradient-text {
+            background: linear-gradient(135deg, #d4af37 0%, #c5a059 50%, #e6ca65 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .gold-border {
+            border-color: #c5a059;
+        }
+        .custom-scrollbar::-webkit-scrollbar {
+            width: 6px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-track {
+            background: #f1f5f9;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+            background: #c5a059;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+<body class="bg-brand-warmGray text-brand-textDark font-sans antialiased selection:bg-brand-gold selection:text-white flex flex-col min-h-screen">
+
+    <!-- Header / Navegación -->
+    <header class="sticky top-0 z-40 bg-brand-forest/95 backdrop-blur-md text-white border-b border-brand-gold/30 shadow-lg">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <!-- Logo / Nombre -->
+                <a href="#" class="flex items-center gap-3 group">
+                    <div class="w-12 h-12 rounded-full border-2 border-brand-gold flex items-center justify-center bg-brand-navy group-hover:scale-105 transition-transform">
+                        <i class="fa-solid font-cinzel text-brand-gold text-xl font-bold">J&M</i>
+                    </div>
+                    <div class="flex flex-col">
+                        <span class="font-cinzel text-lg sm:text-xl font-bold tracking-wider text-white group-hover:text-brand-gold transition-colors">JULIA & MARTÍN</span>
+                        <span class="text-xs tracking-widest text-brand-gold font-light uppercase">Estudio Jurídico</span>
+                    </div>
+                </a>
+
+                <!-- Navegación Escritorio -->
+                <nav class="hidden lg:flex items-center gap-6 text-sm font-medium">
+                    <a href="#inicio" class="hover:text-brand-gold transition-colors">Inicio</a>
+                    <a href="#quienes-somos" class="hover:text-brand-gold transition-colors">Quiénes Somos</a>
+                    <a href="#servicios" class="hover:text-brand-gold transition-colors">Servicios</a>
+                    <a href="#manifiesto" class="hover:text-brand-gold transition-colors">Manifiesto & Ley 30407</a>
+                    <a href="#video-ia" class="hover:text-brand-gold transition-colors">Video IA</a>
+                    <a href="#contacto" class="hover:text-brand-gold transition-colors">Contacto</a>
+                </nav>
+
+                <!-- Botón de Acción Header -->
+                <div class="hidden sm:flex items-center gap-3">
+                    <a href="https://wa.me/51987654321?text=Hola,%20deseo%20solicitar%20una%20consulta%20legal" target="_blank" class="bg-emerald-600 hover:bg-emerald-700 text-white text-xs font-semibold px-4 py-2.5 rounded-full flex items-center gap-2 transition-all shadow-md">
+                        <i class="fa-brands fa-whatsapp text-base"></i> WhatsApp
+                    </a>
+                </div>
+
+                <!-- Botón Menú Móvil -->
+                <div class="lg:hidden flex items-center">
+                    <button id="mobile-menu-btn" aria-label="Abrir Menú" class="text-white hover:text-brand-gold p-2">
+                        <i class="fa-solid fa-bars text-2xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Menú Móvil Desplegable -->
+        <div id="mobile-menu" class="hidden lg:hidden bg-brand-navy border-b border-brand-gold/30 px-4 pt-2 pb-6 space-y-3 text-center">
+            <a href="#inicio" class="mobile-link block py-2 text-white hover:text-brand-gold">Inicio</a>
+            <a href="#quienes-somos" class="mobile-link block py-2 text-white hover:text-brand-gold">Quiénes Somos</a>
+            <a href="#servicios" class="mobile-link block py-2 text-white hover:text-brand-gold">Servicios</a>
+            <a href="#manifiesto" class="mobile-link block py-2 text-white hover:text-brand-gold">Manifiesto & Ley 30407</a>
+            <a href="#video-ia" class="mobile-link block py-2 text-white hover:text-brand-gold">Video IA</a>
+            <a href="#contacto" class="mobile-link block py-2 text-white hover:text-brand-gold">Contacto</a>
+            <div class="pt-2 flex justify-center gap-3">
+                <a href="https://wa.me/51987654321" target="_blank" class="w-full bg-emerald-600 hover:bg-emerald-700 text-white py-2.5 rounded-lg text-sm font-semibold flex items-center justify-center gap-2">
+                    <i class="fa-brands fa-whatsapp text-lg"></i> Contactar por WhatsApp
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- 1. Hero / Sección Inicio -->
+    <section id="inicio" class="relative bg-brand-forest text-white py-20 lg:py-28 overflow-hidden">
+        <!-- Decoración Fondo -->
+        <div class="absolute inset-0 opacity-10 bg-[radial-gradient(#c5a059_1px,transparent_1px)] [background-size:16px_16px] pointer-events-none"></div>
+        
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                
+                <div class="lg:col-span-8 text-center lg:text-left">
+                    <!-- Badge Colegiaturas -->
+                    <div class="inline-flex items-center gap-2 bg-brand-navy/80 border border-brand-gold/50 rounded-full px-4 py-1.5 mb-6 text-xs sm:text-sm text-brand-gold font-medium tracking-wide shadow-sm">
+                        <i class="fa-solid fa-certificate"></i>
+                        <span>Garantía Profesional | CAL N.º 48291 &bull; ICAP N.º 5832</span>
+                    </div>
+
+                    <!-- Lema Oficial -->
+                    <h1 class="font-cinzel text-3xl sm:text-5xl lg:text-6xl font-bold leading-tight mb-6 text-white">
+                        “La vida se defiende, <span class="gold-gradient-text">seas persona y animal</span>, cuenta con nosotros”
+                    </h1>
+
+                    <!-- Propuesta de Valor -->
+                    <p class="text-slate-300 text-base sm:text-lg lg:text-xl font-light mb-8 max-w-3xl leading-relaxed">
+                        Somos una firma jurídica integral que combina rigor legal corporativo, civil y administrativo con un férreo compromiso ético hacia la justicia socio-ambiental y el derecho animal. Ofrecemos defensa personalizada a ciudadanos, empresas, defensores de animales y organizaciones sin fines de lucro en todo el Perú.
+                    </p>
+
+                    <!-- Botones CTA -->
+                    <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
+                        <a href="#contacto" class="bg-brand-gold hover:bg-brand-goldHover text-brand-navy font-bold px-8 py-4 rounded-xl shadow-lg hover:shadow-xl transition-all text-center text-base flex items-center justify-center gap-3">
+                            <i class="fa-solid fa-calendar-check"></i> Agendar Consulta Legal
+                        </a>
+                        <a href="https://wa.me/51987654321?text=Hola,%20requiero%20asesoria%20legal" target="_blank" class="bg-transparent border-2 border-white hover:border-brand-gold hover:text-brand-gold text-white font-semibold px-8 py-4 rounded-xl transition-all text-center text-base flex items-center justify-center gap-3">
+                            <i class="fa-brands fa-whatsapp text-xl text-emerald-400"></i> Contactar por WhatsApp
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Tarjeta Resumen / Stats -->
+                <div class="lg:col-span-4">
+                    <div class="bg-brand-navy/90 border border-brand-gold/40 rounded-2xl p-6 sm:p-8 shadow-2xl backdrop-blur-sm">
+                        <h2 class="font-cinzel text-xl font-bold text-brand-gold mb-6 pb-2 border-b border-brand-gold/30 flex items-center gap-2">
+                            <i class="fa-solid fa-scale-balanced"></i> Compromiso Legal
+                        </h2>
+
+                        <div class="space-y-6">
+                            <div class="flex items-start gap-4">
+                                <div class="w-10 h-10 rounded-lg bg-brand-forest flex items-center justify-center text-brand-gold shrink-0">
+                                    <i class="fa-solid fa-shield-halved text-lg"></i>
+                                </div>
+                                <div>
+                                    <h3 class="font-semibold text-white">Derecho Tradicional y Corporativo</h3>
+                                    <p class="text-xs text-slate-400 mt-1">Asesoría a empresas, litigios civiles, administrativos y penales.</p>
+                                </div>
+                            </div>
+
+                            <div class="flex items-start gap-4">
+                                <div class="w-10 h-10 rounded-lg bg-brand-forest flex items-center justify-center text-brand-gold shrink-0">
+                                    <i class="fa-solid fa-paw text-lg"></i>
+                                </div>
+                                <div>
+                                    <h3 class="font-semibold text-white">Protección Animalista Pro Bono</h3>
+                                    <p class="text-xs text-slate-400 mt-1">Defensa activa ante crueldad animal, maltrato y patrocinio de albergues.</p>
+                                </div>
+                            </div>
+
+                            <div class="flex items-start gap-4">
+                                <div class="w-10 h-10 rounded-lg bg-brand-forest flex items-center justify-center text-brand-gold shrink-0">
+                                    <i class="fa-solid fa-gavel text-lg"></i>
+                                </div>
+                                <div>
+                                    <h3 class="font-semibold text-white">Ley N° 30407 Especializada</h3>
+                                    <p class="text-xs text-slate-400 mt-1">Formulación de denuncias penales eficientes y seguimiento policial.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="mt-6 pt-4 border-t border-brand-gold/20 text-center">
+                            <p class="text-xs text-slate-400">Atención presencial en Lima y virtual a todo el territorio nacional.</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- 2. Sección Quiénes Somos -->
+    <section id="quienes-somos" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <h2 class="text-xs uppercase tracking-widest text-brand-gold font-bold mb-2">Fundadores y Trayectoria</h2>
+                <h3 class="font-cinzel text-3xl sm:text-4xl font-bold text-brand-navy">Quiénes Somos</h3>
+                <div class="w-24 h-1 bg-brand-gold mx-auto mt-4 rounded-full"></div>
+                <p class="mt-4 text-slate-600 text-base leading-relaxed">
+                    Nacimos de la convicción de que la justicia no debe tener vacíos morales. Combinamos una rigurosa formación jurídica académica con una vocación inquebrantable de amparo a la vida vulnerable.
+                </p>
+            </div>
+
+            <!-- Grilla Socios -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
+                <!-- Dra. Julia Ramírez -->
+                <div class="bg-brand-warmGray rounded-2xl overflow-hidden border border-slate-200 shadow-md hover:shadow-xl transition-shadow flex flex-col">
+                    <div class="bg-brand-forest p-6 text-white flex items-center gap-4">
+                        <div class="w-20 h-20 rounded-full border-2 border-brand-gold bg-brand-navy flex items-center justify-center text-2xl font-cinzel text-brand-gold font-bold shrink-0">
+                            JR
+                        </div>
+                        <div>
+                            <h4 class="font-cinzel text-2xl font-bold">Dra. Julia Ramírez</h4>
+                            <p class="text-brand-gold text-xs font-semibold tracking-wider uppercase mt-1">Colegiatura: CAL N.º 48291</p>
+                            <p class="text-slate-300 text-xs">Socia Co-Fundadora</p>
+                        </div>
+                    </div>
+                    <div class="p-6 sm:p-8 flex-grow flex flex-col justify-between space-y-4">
+                        <div>
+                            <h5 class="font-bold text-brand-navy mb-2 flex items-center gap-2 text-sm uppercase tracking-wide">
+                                <i class="fa-solid fa-graduation-cap text-brand-gold"></i> Formación y Especialidad
+                            </h5>
+                            <p class="text-slate-600 text-sm leading-relaxed mb-4">
+                                Abogada graduada con honores por la Universidad Nacional Mayor de San Marcos (UNMSM), Magíster en Derecho Ambiental y Penal por la Pontificia Universidad Católica del Perú (PUCP). Con más de 12 años de experiencia en litigación compleja.
+                            </p>
+                            
+                            <h5 class="font-bold text-brand-navy mb-2 flex items-center gap-2 text-sm uppercase tracking-wide">
+                                <i class="fa-solid fa-heart text-rose-600"></i> Motivación Ética
+                            </h5>
+                            <p class="text-slate-600 text-sm leading-relaxed">
+                                "El grado de civilización de una sociedad se mide en cómo trata a sus seres más indefensos. Mi motivación diaria es transformar el marco legal en un escudo real tanto para los ciudadanos que sufren injusticias como para los animales que carecen de voz ante los tribunales."
+                            </p>
+                        </div>
+                        <div class="pt-4 border-t border-slate-200 flex flex-wrap gap-2">
+                            <span class="bg-slate-200 text-brand-navy text-xs px-3 py-1 rounded-full font-medium">Derecho Penal</span>
+                            <span class="bg-slate-200 text-brand-navy text-xs px-3 py-1 rounded-full font-medium">Derecho Ambiental</span>
+                            <span class="bg-emerald-100 text-emerald-800 text-xs px-3 py-1 rounded-full font-semibold">Protección Animal</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Dr. Martín Mendoza -->
+                <div class="bg-brand-warmGray rounded-2xl overflow-hidden border border-slate-200 shadow-md hover:shadow-xl transition-shadow flex flex-col">
+                    <div class="bg-brand-navy p-6 text-white flex items-center gap-4">
+                        <div class="w-20 h-20 rounded-full border-2 border-brand-gold bg-brand-forest flex items-center justify-center text-2xl font-cinzel text-brand-gold font-bold shrink-0">
+                            MM
+                        </div>
+                        <div>
+                            <h4 class="font-cinzel text-2xl font-bold">Dr. Martín Mendoza</h4>
+                            <p class="text-brand-gold text-xs font-semibold tracking-wider uppercase mt-1">Colegiatura: ICAP N.º 5832</p>
+                            <p class="text-slate-300 text-xs">Socio Co-Fundador</p>
+                        </div>
+                    </div>
+                    <div class="p-6 sm:p-8 flex-grow flex flex-col justify-between space-y-4">
+                        <div>
+                            <h5 class="font-bold text-brand-navy mb-2 flex items-center gap-2 text-sm uppercase tracking-wide">
+                                <i class="fa-solid fa-graduation-cap text-brand-gold"></i> Formación y Especialidad
+                            </h5>
+                            <p class="text-slate-600 text-sm leading-relaxed mb-4">
+                                Abogado por la Universidad de Lima, Especialista en Derecho Administrativo, Civil y Corporativo con Diplomado Internacional en Gestión de Organizaciones Sin Fines de Lucro. Exasesor de entidades públicas y privadas en regulación institucional.
+                            </p>
+                            
+                            <h5 class="font-bold text-brand-navy mb-2 flex items-center gap-2 text-sm uppercase tracking-wide">
+                                <i class="fa-solid fa-hands-holding-circle text-brand-gold"></i> Motivación Ética
+                            </h5>
+                            <p class="text-slate-600 text-sm leading-relaxed">
+                                "Creemos firmemente que la solidez técnica comercial no está reñida con la responsabilidad social. Dirijo la sostenibilidad financiera de nuestra firma para que cada contrato corporativo formalizado sostenga directamente nuestras causas pro bono en defensa de la vida."
+                            </p>
+                        </div>
+                        <div class="pt-4 border-t border-slate-200 flex flex-wrap gap-2">
+                            <span class="bg-slate-200 text-brand-navy text-xs px-3 py-1 rounded-full font-medium">Derecho Administrativo</span>
+                            <span class="bg-slate-200 text-brand-navy text-xs px-3 py-1 rounded-full font-medium">Derecho Civil y Corporativo</span>
+                            <span class="bg-emerald-100 text-emerald-800 text-xs px-3 py-1 rounded-full font-semibold">Derecho de Organizaciones</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 3. Sección de Servicios Legales -->
+    <section id="servicios" class="py-20 bg-slate-50 border-y border-slate-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-12">
+                <h2 class="text-xs uppercase tracking-widest text-brand-gold font-bold mb-2">Estructura de Servicios</h2>
+                <h3 class="font-cinzel text-3xl sm:text-4xl font-bold text-brand-navy">Áreas de Práctica y Programa Pro Bono</h3>
+                <div class="w-24 h-1 bg-brand-gold mx-auto mt-4 rounded-full"></div>
+                <p class="mt-4 text-slate-600 text-base">
+                    Operamos bajo un modelo autosostenible: nuestros servicios comerciales garantizan la solvencia técnica y financian el patrocinio legal de causas sociales y animalistas.
+                </p>
+            </div>
+
+            <!-- Tabs de Servicios -->
+            <div class="flex justify-center mb-8 border-b border-slate-300">
+                <button id="btn-tab-comerciales" onclick="switchTab('comerciales')" class="px-6 py-3 font-semibold text-sm border-b-2 border-brand-gold text-brand-navy flex items-center gap-2 transition-all">
+                    <i class="fa-solid fa-briefcase"></i> Servicios Comerciales (Remunerados)
+                </button>
+                <button id="btn-tab-probono" onclick="switchTab('probono')" class="px-6 py-3 font-semibold text-sm border-b-2 border-transparent text-slate-500 hover:text-brand-navy flex items-center gap-2 transition-all">
+                    <i class="fa-solid fa-hand-holding-heart text-emerald-600"></i> Servicios Sociales / Pro Bono
+                </button>
+            </div>
+
+            <!-- Contenido Tab 1: Servicios Comerciales -->
+            <div id="tab-comerciales" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <!-- Tarjeta 1 -->
+                <div class="bg-white p-6 rounded-xl border border-slate-200 shadow-sm hover:shadow-md transition-shadow">
+                    <div class="w-12 h-12 rounded-lg bg-slate-100 text-brand-navy flex items-center justify-center text-xl mb-4">
+                        <i class="fa-solid fa-building"></i>
+                    </div>
+                    <h4 class="font-cinzel font-bold text-lg text-brand-navy mb-2">Derecho Corporativo & PYMES</h4>
+                    <p class="text-slate-600 text-xs leading-relaxed">
+                        Constitución de empresas, redacción de contratos comerciales, cumplimiento normativo, asesoría laboral patronal e impuestos.
+                    </p>
+                </div>
+                <!-- Tarjeta 2 -->
+                <div class="bg-white p-6 rounded-xl border border-slate-200 shadow-sm hover:shadow-md transition-shadow">
+                    <div class="w-12 h-12 rounded-lg bg-slate-100 text-brand-navy flex items-center justify-center text-xl mb-4">
+                        <i class="fa-solid fa-scale-unbalanced"></i>
+                    </div>
+                    <h4 class="font-cinzel font-bold text-lg text-brand-navy mb-2">Derecho Civil y Patrimonial</h4>
+                    <p class="text-slate-600 text-xs leading-relaxed">
+                        Contratos de compraventa, arrendamientos, reclamaciones de herencias, sucesiones intestadas, cobranza ejecutiva y propiedad.
+                    </p>
+                </div>
+                <!-- Tarjeta 3 -->
+                <div class="bg-white p-6 rounded-xl border border-slate-200 shadow-sm hover:shadow-md transition-shadow">
+                    <div class="w-12 h-12 rounded-lg bg-slate-100 text-brand-navy flex items-center justify-center text-xl mb-4">
+                        <i class="fa-solid fa-gavel"></i>
+                    </div>
+                    <h4 class="font-cinzel font-bold text-lg text-brand-navy mb-2">Defensa Penal General</h4>
+                    <p class="text-slate-600 text-xs leading-relaxed">
+                        Patrocinio procesal en investigaciones fiscales, querellas por difamación, delitos patrimoniales y representación de víctimas.
+                    </p>
+                </div>
+                <!-- Tarjeta 4 -->
+                <div class="bg-white p-6 rounded-xl border border-slate-200 shadow-sm hover:shadow-md transition-shadow">
+                    <div class="w-12 h-12 rounded-lg bg-slate-100 text-brand-navy flex items-center justify-center text-xl mb-4">
+                        <i class="fa-solid fa-landmark"></i>
+                    </div>
+                    <h4 class="font-cinzel font-bold text-lg text-brand-navy mb-2">Derecho Administrativo</h4>
+                    <p class="text-slate-600 text-xs leading-relaxed">
+                        Procedimientos sancionadores ante Municipalidades, INDECOPI, OEFA, licencias, permisos y Recursos de Apelación.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Contenido Tab 2: Servicios Pro Bono (Oculto por defecto) -->
+            <div id="tab-probono" class="hidden grid grid-cols-1 md:grid-cols-3 gap-6">
+                <!-- Tarjeta ProBono 1 -->
+                <div class="bg-emerald-50/50 p-6 rounded-xl border border-emerald-200 shadow-sm">
+                    <div class="w-12 h-12 rounded-lg bg-emerald-100 text-emerald-800 flex items-center justify-center text-xl mb-4">
+                        <i class="fa-solid fa-shield-cat"></i>
+                    </div>
+                    <h4 class="font-cinzel font-bold text-lg text-emerald-950 mb-2">Defensa Legal Animalista</h4>
+                    <p class="text-slate-600 text-xs leading-relaxed">
+                        Redacción e interposición de denuncias penales formalizadas ante la Fiscalía por crueldad y abandono de animales domésticos y silvestres.
+                    </p>
+                </div>
+                <!-- Tarjeta ProBono 2 -->
+                <div class="bg-emerald-50/50 p-6 rounded-xl border border-emerald-200 shadow-sm">
+                    <div class="w-12 h-12 rounded-lg bg-emerald-100 text-emerald-800 flex items-center justify-center text-xl mb-4">
+                        <i class="fa-solid fa-house-chimney-medical"></i>
+                    </div>
+                    <h4 class="font-cinzel font-bold text-lg text-emerald-950 mb-2">Patrocinio a Albergues</h4>
+                    <p class="text-slate-600 text-xs leading-relaxed">
+                        Formalización legal sin costo de Asociaciones Sin Fines de Lucro (ONGs animalistas), estatutos y asesoría en regularización de predios de acogida.
+                    </p>
+                </div>
+                <!-- Tarjeta ProBono 3 -->
+                <div class="bg-emerald-50/50 p-6 rounded-xl border border-emerald-200 shadow-sm">
+                    <div class="w-12 h-12 rounded-lg bg-emerald-100 text-emerald-800 flex items-center justify-center text-xl mb-4">
+                        <i class="fa-solid fa-bullhorn"></i>
+                    </div>
+                    <h4 class="font-cinzel font-bold text-lg text-emerald-950 mb-2">Incidencia Jurídica Pública</h4>
+                    <p class="text-slate-600 text-xs leading-relaxed">
+                        Acompañamiento a rescatistas independientes en fiscalizaciones municipales y fiscalía ambiental para incautación preventiva de animales víctimas.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Criterios de Elegibilidad Pro Bono -->
+            <div class="mt-12 bg-white rounded-2xl border border-brand-gold/30 p-6 sm:p-8 shadow-sm">
+                <div class="flex items-center gap-3 mb-4">
+                    <div class="w-10 h-10 rounded-full bg-brand-gold/20 flex items-center justify-center text-brand-gold font-bold">
+                        <i class="fa-solid fa-clipboard-check"></i>
+                    </div>
+                    <h4 class="font-cinzel text-xl font-bold text-brand-navy">Criterios de Elegibilidad Pro Bono o Tarifa Reducida</h4>
+                </div>
+                <p class="text-slate-600 text-sm mb-6">
+                    Para mantener la sostenibilidad del estudio y destinar eficientemente los recursos gratuitos, las solicitudes de patrocinio animalista social se evalúan bajo los siguientes parámetros estritos:
+                </p>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6 text-xs text-slate-700">
+                    <div class="p-4 bg-slate-50 rounded-lg border border-slate-200">
+                        <span class="font-bold text-brand-navy block mb-1 text-sm">1. Gravedad del Caso</span>
+                        Casos comprobables de actos de crueldad extrema, biocidio, mutilación o abandono sistemático que requieran medida cautelar penal urgente.
+                    </div>
+                    <div class="p-4 bg-slate-50 rounded-lg border border-slate-200">
+                        <span class="font-bold text-brand-navy block mb-1 text-sm">2. Condición Socioeconómica</span>
+                        Evaluación del perfil del solicitante, rescatistas independientes con recursos limitados o refugios formalmente registrados sin ingresos comerciales.
+                    </div>
+                    <div class="p-4 bg-slate-50 rounded-lg border border-slate-200">
+                        <span class="font-bold text-brand-navy block mb-1 text-sm">3. Pruebas y Evidencias</span>
+                        Disponibilidad de elementos probatorios básicos (videos, informes veterinarios legistas, testimonios, dirección del agresor).
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 4. Sección Publicación de Impacto (Manifiesto y Ley N° 30407) -->
+    <section id="manifiesto" class="py-20 bg-brand-navy text-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-14">
+                <span class="bg-brand-gold/20 text-brand-gold text-xs px-3 py-1 rounded-full uppercase tracking-widest font-bold">Artículo & Manifiesto Jurídico</span>
+                <h2 class="font-cinzel text-3xl sm:text-5xl font-bold text-white mt-4">
+                    “La vida se defiende, seas persona y animal, cuenta con nosotros”
+                </h2>
+                <div class="w-24 h-1 bg-brand-gold mx-auto mt-4 rounded-full"></div>
+                <p class="text-slate-300 text-sm sm:text-base mt-4 font-light">
+                    Por la Dra. Julia Ramírez y el Dr. Martín Mendoza | Publicación Oficial del Estudio
+                </p>
+            </div>
+
+            <!-- Contenido del Artículo -->
+            <div class="bg-slate-900 border border-brand-gold/30 rounded-2xl p-6 sm:p-10 text-slate-300 leading-relaxed space-y-6 max-w-4xl mx-auto shadow-2xl">
+                <p class="text-base sm:text-lg text-white font-light border-l-4 border-brand-gold pl-4 italic">
+                    "El ordenamiento jurídico moderno no puede permanecer indiferente ante el sufrimiento de seres sintientes. El Derecho no es solo una herramienta de regulación económica, sino el instrumento definitivo para la tutela efectiva de la vida."
+                </p>
+
+                <h3 class="font-cinzel text-xl font-bold text-brand-gold pt-4 border-t border-slate-800">
+                    1. El Marco Legal Peruano: La Ley N° 30407
+                </h3>
+                <p class="text-sm sm:text-base">
+                    En el Perú, la aprobación de la <strong class="text-white">Ley N° 30407 (Ley de Protección y Bienestar Animal)</strong> marcó un hito fundamental al incorporar el <strong class="text-white">Artículo 206-A en el Código Penal</strong>. Esta norma tipifica explícitamente los actos de crueldad y el abandono de animales domésticos y silvestres como delitos sancionados con pena privativa de la libertad de hasta 3 años en su forma simple, y de 3 a 5 años en casos con agravante (muerte del animal).
+                </p>
+
+                <h3 class="font-cinzel text-xl font-bold text-brand-gold pt-4 border-t border-slate-800">
+                    2. El Rol del Abogado en la Denuncia y Patrocinio
+                </h3>
+                <p class="text-sm sm:text-base">
+                    A menudo, los ciudadanos se enfrentan a la inacción de las autoridades policiales por desconocimiento normativo. El rol de nuestro estudio jurídico radica en:
+                </p>
+                <ul class="list-disc list-inside text-sm sm:text-base space-y-2 pl-2">
+                    <li><strong class="text-white">Formalización Técnica:</strong> Redactar la denuncia penal respaldada con el informe médico-veterinario y la cadena de custodia probatoria.</li>
+                    <li><strong class="text-white">Impulso Fiscal:</strong> Garantizar que la Fiscalía de Prevención del Delito o la Fiscalía Penal de Turno aperture investigación preliminar.</li>
+                    <li><strong class="text-white">Medidas de Proteccion:</strong> Solicitar la incautación o rescate cautelar inmediato del animal para salvaguardar su integridad.</li>
+                </ul>
+
+                <!-- Guía Interactiva en Pasos -->
+                <div class="mt-8 bg-brand-forest/60 border border-brand-gold/40 rounded-xl p-6">
+                    <h4 class="font-cinzel font-bold text-lg text-white mb-4 flex items-center gap-2">
+                        <i class="fa-solid fa-list-check text-brand-gold"></i> Guía Rápida para el Ciudadano ante Casos de Maltrato
+                    </h4>
+                    <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 text-xs">
+                        <div class="bg-brand-navy p-3 rounded-lg border border-slate-700">
+                            <span class="text-brand-gold font-bold block mb-1">Paso 1: Recabar Evidencia</span>
+                            Tome fotos, grabe videos claros, registre la dirección exacta y obtenga datos de testigos.
+                        </div>
+                        <div class="bg-brand-navy p-3 rounded-lg border border-slate-700">
+                            <span class="text-brand-gold font-bold block mb-1">Paso 2: Informe Veterinario</span>
+                            Si el animal fue herido, solicite un reporte clínico detallado expedido por un médico veterinario colegiado.
+                        </div>
+                        <div class="bg-brand-navy p-3 rounded-lg border border-slate-700">
+                            <span class="text-brand-gold font-bold block mb-1">Paso 3: Denuncia Oficial</span>
+                            Acuda a la Comisaría (PNP), Municipalidad (fiscalización) o Fiscalía. Si no procesan su denuncia, nuestro equipo le asesora.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 5. Video Promocional Generado con IA -->
+    <section id="video-ia" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-12">
+                <span class="bg-emerald-100 text-emerald-800 text-xs px-3 py-1 rounded-full uppercase tracking-widest font-bold">Producción Audiovisual IA</span>
+                <h2 class="font-cinzel text-3xl sm:text-4xl font-bold text-brand-navy mt-3">Nuestra Historia de Origen</h2>
+                <div class="w-24 h-1 bg-brand-gold mx-auto mt-4 rounded-full"></div>
+                <p class="text-slate-600 text-base mt-4">
+                    Conoce a través de nuestra pieza audiovisual generada con Inteligencia Artificial el propósito humano y profesional que une a la Dra. Julia y al Dr. Martín.
+                </p>
+            </div>
+
+            <!-- Video Player Component -->
+            <div class="max-w-4xl mx-auto bg-brand-navy rounded-2xl overflow-hidden shadow-2xl border border-slate-300 relative group">
+                <!-- Simulador de Canvas / HTML5 Video Holder -->
+                <div class="relative aspect-video bg-slate-900 flex flex-col items-center justify-center p-6 text-center">
+                    
+                    <!-- Fondo Animado Conceptual -->
+                    <div class="absolute inset-0 opacity-20 bg-[radial-gradient(#c5a059_2px,transparent_2px)] [background-size:24px_24px]"></div>
+
+                    <!-- Overlay de contenido simulado -->
+                    <div id="video-overlay" class="relative z-10 flex flex-col items-center">
+                        <div class="w-20 h-20 rounded-full bg-brand-gold text-brand-navy flex items-center justify-center text-3xl cursor-pointer hover:scale-110 transition-transform shadow-xl mb-4" onclick="playAiVideo()">
+                            <i class="fa-solid fa-play ml-1"></i>
+                        </div>
+                        <h3 class="font-cinzel text-xl sm:text-2xl font-bold text-white mb-2">"La Vida se Defiende" - Documental de Origen</h3>
+                        <p class="text-xs sm:text-sm text-slate-300 max-w-lg mb-4">
+                            Voz de IA narrativa que relata cómo un caso de crueldad impune unió el camino de dos abogados para crear una firma con alma y rigor.
+                        </p>
+                        <span class="text-xs text-brand-gold border border-brand-gold/40 px-3 py-1 rounded-full bg-brand-navy/60">
+                            Duración: 1 min 45 seg | Audio HD Narrado por IA
+                        </span>
+                    </div>
+
+                    <!-- Reproductor Interactivo Activado por JS -->
+                    <div id="video-playing" class="hidden absolute inset-0 bg-brand-navy p-8 flex flex-col justify-between text-left">
+                        <div class="flex justify-between items-center border-b border-slate-700 pb-4">
+                            <span class="text-brand-gold font-cinzel text-sm font-bold flex items-center gap-2">
+                                <i class="fa-solid fa-compact-disc animate-spin text-emerald-400"></i> Reproduciendo Presentación Narrada con IA
+                            </span>
+                            <button onclick="stopAiVideo()" class="text-slate-400 hover:text-white text-xs bg-slate-800 px-3 py-1 rounded">Cerrar</button>
+                        </div>
+                        <div class="space-y-4 py-4">
+                            <p class="text-slate-200 text-sm sm:text-base italic leading-relaxed">
+                                Guión IA: “No somos sólo abogados de tribunales. Somos defensores de la vida en todas sus expresiones. La Dra. Julia Ramírez y el Dr. Martín Mendoza unieron sus trayectorias para demostrar que las leyes deben servir a quienes más lo necesitan: personas y animales por igual...”
+                            </p>
+                            <div class="w-full bg-slate-800 h-2 rounded-full overflow-hidden">
+                                <div class="bg-brand-gold h-full w-2/3 animate-pulse"></div>
+                            </div>
+                        </div>
+                        <div class="flex justify-between items-center pt-4 border-t border-slate-700 text-xs text-slate-400">
+                            <span>Audio sintetizado vía AI Speech Engine</span>
+                            <a href="#contacto" class="text-brand-gold font-bold hover:underline">Ir a Agendar Consulta &rarr;</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 6. Chatbot Asistente IA Integrado (Simulador / Poe Widget) -->
+    <!-- Botón Flotante Chatbot -->
+    <div class="fixed bottom-6 right-6 z-50">
+        <button id="chatbot-toggle-btn" onclick="toggleChatbot()" class="bg-brand-forest border-2 border-brand-gold text-white p-4 rounded-full shadow-2xl hover:scale-105 transition-all flex items-center justify-center gap-2 group">
+            <i class="fa-solid fa-robot text-2xl text-brand-gold"></i>
+            <span class="hidden sm:inline text-xs font-bold tracking-wide pr-1">Asistente IA J&M</span>
+            <span class="flex h-3 w-3 relative">
+              <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+              <span class="relative inline-flex rounded-full h-3 w-3 bg-emerald-500"></span>
+            </span>
+        </button>
+    </div>
+
+    <!-- Ventana flotante del Chatbot -->
+    <div id="chatbot-modal" class="hidden fixed bottom-24 right-4 sm:right-6 z-50 w-[92vw] sm:w-[400px] h-[520px] bg-white rounded-2xl shadow-2xl border border-slate-300 flex flex-col overflow-hidden transition-all">
+        <!-- Header Chatbot -->
+        <div class="bg-brand-navy p-4 text-white flex justify-between items-center border-b border-brand-gold/40">
+            <div class="flex items-center gap-3">
+                <div class="w-9 h-9 rounded-full bg-brand-forest border border-brand-gold flex items-center justify-center text-brand-gold">
+                    <i class="fa-solid fa-robot"></i>
+                </div>
+                <div>
+                    <h4 class="font-cinzel text-sm font-bold">Asistente Legal IA (Poe Tech)</h4>
+                    <p class="text-[10px] text-emerald-400 flex items-center gap-1">
+                        <span class="w-1.5 h-1.5 bg-emerald-400 rounded-full inline-block"></span> En línea &bull; Consultas Generales
+                    </p>
+                </div>
+            </div>
+            <button onclick="toggleChatbot()" class="text-slate-400 hover:text-white p-1">
+                <i class="fa-solid fa-xmark text-lg"></i>
+            </button>
+        </div>
+
+        <!-- Disclaimer Obligatorio Visible -->
+        <div class="bg-amber-50 border-b border-amber-200 p-2.5 text-[11px] text-amber-950 flex items-start gap-2">
+            <i class="fa-solid fa-triangle-exclamation text-amber-600 text-xs mt-0.5 shrink-0"></i>
+            <span><strong>Descargo de responsabilidad:</strong> Este bot brinda información orientativa general y <u>NO constituye asesoría legal directa</u> ni crea relación abogado-cliente.</span>
+        </div>
+
+        <!-- Área de Mensajes -->
+        <div id="chat-messages" class="flex-grow p-4 overflow-y-auto space-y-3 text-xs custom-scrollbar bg-slate-50">
+            <!-- Mensaje Inicial Bot -->
+            <div class="flex items-start gap-2">
+                <div class="w-7 h-7 rounded-full bg-brand-navy text-brand-gold flex items-center justify-center shrink-0 font-bold text-[10px]">IA</div>
+                <div class="bg-white p-3 rounded-2xl rounded-tl-none border border-slate-200 text-slate-700 shadow-sm max-w-[85%]">
+                    Hola, soy el asistente automatizado de <strong>Julia & Martín Abogados</strong>. ¿En qué categoría te gustaría información orientativa hoy?
+                    <div class="mt-3 space-y-1.5">
+                        <button onclick="sendQuickQuery('Consultar sobre Servicios Comerciales')" class="w-full text-left bg-slate-100 hover:bg-brand-gold/20 p-2 rounded border border-slate-200 font-medium text-brand-navy text-[11px] transition-colors">
+                            💼 Servicios Comerciales y Empresas
+                        </button>
+                        <button onclick="sendQuickQuery('¿Cómo denunciar Maltrato Animal?')" class="w-full text-left bg-emerald-50 hover:bg-emerald-100 p-2 rounded border border-emerald-200 font-medium text-emerald-900 text-[11px] transition-colors">
+                            🐾 Pasos para Denunciar Maltrato Animal (Ley 30407)
+                        </button>
+                        <button onclick="sendQuickQuery('Solicitar Programa Pro Bono')" class="w-full text-left bg-slate-100 hover:bg-brand-gold/20 p-2 rounded border border-slate-200 font-medium text-brand-navy text-[11px] transition-colors">
+                            🤝 Criterios de Atención Pro Bono
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Input de Texto y Controles -->
+        <div class="p-3 bg-white border-t border-slate-200 flex items-center gap-2">
+            <input type="text" id="chat-input" placeholder="Escribe tu consulta orientativa..." class="flex-grow bg-slate-100 border border-slate-300 rounded-xl px-3 py-2 text-xs focus:outline-none focus:border-brand-gold text-slate-800" onkeypress="handleKeyPress(event)">
+            <button onclick="sendMessage()" class="bg-brand-forest hover:bg-brand-forestLight text-white px-3 py-2 rounded-xl text-xs font-semibold">
+                <i class="fa-solid fa-paper-plane"></i>
+            </button>
+        </div>
+    </div>
+
+    <!-- 7. Sección Contacto, Canales de Comunicación y Política de Privacidad (Ley N° 29733) -->
+    <section id="contacto" class="py-20 bg-slate-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-14">
+                <h2 class="text-xs uppercase tracking-widest text-brand-gold font-bold mb-2">Canales Directos</h2>
+                <h3 class="font-cinzel text-3xl sm:text-4xl font-bold text-brand-navy">Contáctenos</h3>
+                <div class="w-24 h-1 bg-brand-gold mx-auto mt-4 rounded-full"></div>
+                <p class="text-slate-600 text-sm sm:text-base mt-4">
+                    Estamos prestos a atender sus consultas legales corporativas, civiles o de protección animal.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-10">
+                
+                <!-- Info de Contacto Rápida -->
+                <div class="lg:col-span-5 space-y-6">
+                    <div class="bg-white p-6 sm:p-8 rounded-2xl border border-slate-200 shadow-sm space-y-6">
+                        <h4 class="font-cinzel text-xl font-bold text-brand-navy pb-3 border-b border-slate-200">Oficina Principal</h4>
+                        
+                        <div class="flex items-start gap-4">
+                            <div class="w-10 h-10 rounded-lg bg-brand-forest text-brand-gold flex items-center justify-center text-lg shrink-0">
+                                <i class="fa-solid fa-location-dot"></i>
+                            </div>
+                            <div>
+                                <h5 class="font-bold text-slate-800 text-sm">Dirección</h5>
+                                <p class="text-xs text-slate-600 mt-0.5">Av. Javier Prado Este 2450, Of. 802, San Isidro, Lima - Perú</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start gap-4">
+                            <div class="w-10 h-10 rounded-lg bg-brand-forest text-brand-gold flex items-center justify-center text-lg shrink-0">
+                                <i class="fa-solid fa-phone"></i>
+                            </div>
+                            <div>
+                                <h5 class="font-bold text-slate-800 text-sm">Central Telefónica</h5>
+                                <p class="text-xs text-slate-600 mt-0.5">+51 (01) 422-9876 / +51 987 654 321</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start gap-4">
+                            <div class="w-10 h-10 rounded-lg bg-brand-forest text-brand-gold flex items-center justify-center text-lg shrink-0">
+                                <i class="fa-solid fa-envelope"></i>
+                            </div>
+                            <div>
+                                <h5 class="font-bold text-slate-800 text-sm">Correo Electrónico</h5>
+                                <p class="text-xs text-slate-600 mt-0.5">contacto@juliamartinabogados.pe</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start gap-4">
+                            <div class="w-10 h-10 rounded-lg bg-emerald-600 text-white flex items-center justify-center text-lg shrink-0">
+                                <i class="fa-brands fa-whatsapp"></i>
+                            </div>
+                            <div>
+                                <h5 class="font-bold text-slate-800 text-sm">Atención Inmediata WhatsApp</h5>
+                                <p class="text-xs text-slate-600 mt-0.5">Disponible de Lunes a Viernes (8:00 hrs - 18:00 hrs)</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Botón para ver Política de Privacidad Modal -->
+                    <div class="bg-brand-navy p-6 rounded-2xl text-white border border-brand-gold/30">
+                        <h5 class="font-cinzel text-brand-gold font-bold text-base mb-2">Protección de Datos Personales</h5>
+                        <p class="text-xs text-slate-300 mb-4 leading-relaxed">
+                            Sus datos recopilados en este sitio web están protegidos en estricto cumplimiento con la <strong>Ley N° 29733 (Ley de Protección de Datos Personales en el Perú)</strong>.
+                        </p>
+                        <button onclick="openPrivacyModal()" class="text-xs text-brand-gold underline hover:text-white font-semibold flex items-center gap-1">
+                            <i class="fa-solid fa-shield-cat"></i> Leer Política de Privacidad & Ejercicio de Derechos ARCO
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Formulario de Contacto Funcional -->
+                <div class="lg:col-span-7">
+                    <div class="bg-white p-6 sm:p-8 rounded-2xl border border-slate-200 shadow-md">
+                        <h4 class="font-cinzel text-xl font-bold text-brand-navy mb-6">Envíenos un Mensaje Directo</h4>
+                        
+                        <form id="contact-form" onsubmit="handleFormSubmit(event)" class="space-y-4">
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                                <div>
+                                    <label class="block text-xs font-semibold text-slate-700 mb-1">Nombre Completo *</label>
+                                    <input type="text" required id="form-name" placeholder="Ej. Carlos Mendoza" class="w-full bg-slate-50 border border-slate-300 rounded-lg p-3 text-xs text-slate-800 focus:outline-none focus:border-brand-gold">
+                                </div>
+                                <div>
+                                    <label class="block text-xs font-semibold text-slate-700 mb-1">Correo Electrónico *</label>
+                                    <input type="email" required id="form-email" placeholder="ejemplo@correo.com" class="w-full bg-slate-50 border border-slate-300 rounded-lg p-3 text-xs text-slate-800 focus:outline-none focus:border-brand-gold">
+                                </div>
+                            </div>
+
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                                <div>
+                                    <label class="block text-xs font-semibold text-slate-700 mb-1">Teléfono / WhatsApp *</label>
+                                    <input type="tel" required id="form-phone" placeholder="+51 900 000 000" class="w-full bg-slate-50 border border-slate-300 rounded-lg p-3 text-xs text-slate-800 focus:outline-none focus:border-brand-gold">
+                                </div>
+                                <div>
+                                    <label class="block text-xs font-semibold text-slate-700 mb-1">Tipo de Consulta *</label>
+                                    <select required id="form-type" class="w-full bg-slate-50 border border-slate-300 rounded-lg p-3 text-xs text-slate-800 focus:outline-none focus:border-brand-gold">
+                                        <option value="Comercial / Empresa">Servicio Comercial / Empresa / Personas</option>
+                                        <option value="Denuncia Maltrato Animal">Denuncia por Maltrato Animal (Ley 30407)</option>
+                                        <option value="Solicitud Pro Bono / Albergues">Solicitud de Programa Pro Bono / Albergues</option>
+                                        <option value="Otra Consulta">Otra Consulta Legal General</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div>
+                                <label class="block text-xs font-semibold text-slate-700 mb-1">Detalle del Caso *</label>
+                                <textarea required id="form-message" rows="4" placeholder="Describa brevemente los hechos, ubicación y fechas correspondientes..." class="w-full bg-slate-50 border border-slate-300 rounded-lg p-3 text-xs text-slate-800 focus:outline-none focus:border-brand-gold"></textarea>
+                            </div>
+
+                            <div class="flex items-start gap-2 pt-2">
+                                <input type="checkbox" required id="form-consent" class="mt-1 rounded text-brand-gold focus:ring-brand-gold">
+                                <label for="form-consent" class="text-[11px] text-slate-600">
+                                    He leído y acepto la <button type="button" onclick="openPrivacyModal()" class="text-brand-gold font-bold underline">Política de Privacidad</button> conforme a la Ley N° 29733 para el tratamiento de mis datos personales.
+                                </label>
+                            </div>
+
+                            <button type="submit" class="w-full bg-brand-forest hover:bg-brand-forestLight text-white font-bold py-3.5 rounded-xl transition-all shadow-md text-sm flex items-center justify-center gap-2">
+                                <i class="fa-solid fa-paper-plane"></i> Enviar Mensaje a los Abogados
+                            </button>
+                        </form>
+
+                        <!-- Mensaje de Éxito del Formulario -->
+                        <div id="form-success-msg" class="hidden mt-4 p-4 bg-emerald-100 border border-emerald-300 rounded-xl text-emerald-900 text-xs text-center font-medium">
+                            <i class="fa-solid fa-circle-check text-emerald-600 text-base block mb-1"></i>
+                            ¡Mensaje enviado con éxito! Un miembro de nuestro equipo o abogado asignado se pondrá en contacto con usted en breve.
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Modal Política de Privacidad (Ley N° 29733) -->
+    <div id="privacy-modal" class="hidden fixed inset-0 z-50 bg-black/70 backdrop-blur-sm flex items-center justify-center p-4">
+        <div class="bg-white rounded-2xl max-w-2xl w-full max-h-[85vh] flex flex-col overflow-hidden shadow-2xl border border-slate-300">
+            <div class="bg-brand-navy p-5 text-white flex justify-between items-center border-b border-brand-gold/40">
+                <h4 class="font-cinzel text-lg font-bold text-brand-gold flex items-center gap-2">
+                    <i class="fa-solid fa-user-shield"></i> Política de Privacidad conforme a la Ley N° 29733
+                </h4>
+                <button onclick="closePrivacyModal()" class="text-slate-400 hover:text-white p-1">
+                    <i class="fa-solid fa-xmark text-xl"></i>
+                </button>
+            </div>
+            
+            <div class="p-6 overflow-y-auto text-xs text-slate-700 space-y-4 custom-scrollbar leading-relaxed">
+                <p><strong>Titularidad del Banco de Datos:</strong> Los datos personales recolectados a través de este sitio web son almacenados en el banco de datos de clientes y contactos de titularidad de <strong>Julia & Martín Abogados S.C.R.L.</strong>, domiciliado en Lima, Perú.</p>
+
+                <h5 class="font-bold text-brand-navy text-sm">1. Finalidad del Tratamiento de Datos</h5>
+                <p>Los datos solicitados (nombre, teléfono, correo electrónico y detalle de la consulta) serán utilizados exclusivamente para:</p>
+                <ul class="list-disc pl-5 space-y-1">
+                    <li>Atender y dar respuesta a sus consultas de orientación o requerimientos de servicios jurídicos.</li>
+                    <li>Evaluar la elegibilidad de solicitudes en el Programa Pro Bono y denuncias de maltrato animal.</li>
+                    <li>Mantener comunicación directa vía llamada, correo o WhatsApp sobre el estado de su requerimiento.</li>
+                </ul>
+
+                <h5 class="font-bold text-brand-navy text-sm">2. Consentimiento y Seguridad</h5>
+                <p>Al completar nuestros formularios, el usuario otorga su consentimiento libre, previo, expreso e informado. El estudio aplica medidas de seguridad técnicas y organizativas para evitar la alteración, pérdida o acceso no autorizado a sus datos.</p>
+
+                <h5 class="font-bold text-brand-navy text-sm">3. Ejercicio de Derechos ARCO</h5>
+                <p>De conformidad con la Ley N° 29733 y su Reglamento, el titular de los datos personales podrá ejercer en cualquier momento sus derechos de <strong>Acceso, Rectificación, Cancelación y Oposición (ARCO)</strong> enviando una solicitud formal al correo electrónico: <strong>privacidad@juliamartinabogados.pe</strong> acompañando su copia de DNI o documento de identidad.</p>
+            </div>
+
+            <div class="p-4 bg-slate-100 border-t border-slate-200 flex justify-end">
+                <button onclick="closePrivacyModal()" class="bg-brand-forest text-white px-5 py-2 rounded-lg text-xs font-semibold hover:bg-brand-forestLight">
+                    Entendido y Cerrar
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer General -->
+    <footer class="bg-brand-navy text-slate-400 py-12 border-t border-brand-gold/30">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8 text-xs">
+                
+                <div class="md:col-span-2 space-y-3">
+                    <div class="flex items-center gap-2">
+                        <span class="font-cinzel text-lg font-bold text-white tracking-wider">JULIA & MARTÍN ABOGADOS</span>
+                    </div>
+                    <p class="text-slate-400 max-w-md">
+                        “La vida se defiende, seas persona y animal, cuenta con nosotros”
+                    </p>
+                    <p class="text-slate-500 text-[11px]">
+                        Colegiaturas Oficiales: Dra. Julia Ramírez (CAL N.º 48291) &bull; Dr. Martín Mendoza (ICAP N.º 5832).
+                    </p>
+                </div>
+
+                <div>
+                    <h5 class="font-cinzel text-brand-gold font-bold text-sm mb-3">Secciones</h5>
+                    <ul class="space-y-2">
+                        <li><a href="#inicio" class="hover:text-white">Inicio</a></li>
+                        <li><a href="#quienes-somos" class="hover:text-white">Quiénes Somos</a></li>
+                        <li><a href="#servicios" class="hover:text-white">Servicios & Pro Bono</a></li>
+                        <li><a href="#manifiesto" class="hover:text-white">Manifiesto Ley N° 30407</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h5 class="font-cinzel text-brand-gold font-bold text-sm mb-3">Redes y Contacto</h5>
+                    <div class="flex gap-4 text-base text-slate-300">
+                        <a href="#" class="hover:text-brand-gold"><i class="fa-brands fa-facebook"></i></a>
+                        <a href="#" class="hover:text-brand-gold"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="#" class="hover:text-brand-gold"><i class="fa-brands fa-linkedin"></i></a>
+                        <a href="https://wa.me/51987654321" target="_blank" class="hover:text-emerald-400"><i class="fa-brands fa-whatsapp"></i></a>
+                    </div>
+                    <button onclick="openPrivacyModal()" class="mt-4 text-[11px] text-slate-500 underline hover:text-slate-300">
+                        Política de Privacidad (Ley N° 29733)
+                    </button>
+                </div>
+
+            </div>
+
+            <div class="pt-6 border-t border-slate-800 text-center text-[11px] text-slate-500">
+                &copy; 2026 Estudio Jurídico Julia & Martín Abogados S.C.R.L. Todos los derechos reservados.
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts de Interactividad -->
+    <script>
+        // Menú Móvil Toggle
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const mobileLinks = document.querySelectorAll('.mobile-link');
+
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+
+        // Tabs de Servicios
+        function switchTab(tab) {
+            const btnComerciales = document.getElementById('btn-tab-comerciales');
+            const btnProbono = document.getElementById('btn-tab-probono');
+            const tabComerciales = document.getElementById('tab-comerciales');
+            const tabProbono = document.getElementById('tab-probono');
+
+            if (tab === 'comerciales') {
+                tabComerciales.classList.remove('hidden');
+                tabProbono.classList.add('hidden');
+                
+                btnComerciales.classList.add('border-brand-gold', 'text-brand-navy');
+                btnComerciales.classList.remove('border-transparent', 'text-slate-500');
+
+                btnProbono.classList.remove('border-brand-gold', 'text-brand-navy');
+                btnProbono.classList.add('border-transparent', 'text-slate-500');
+            } else {
+                tabComerciales.classList.add('hidden');
+                tabProbono.classList.remove('hidden');
+
+                btnProbono.classList.add('border-brand-gold', 'text-brand-navy');
+                btnProbono.classList.remove('border-transparent', 'text-slate-500');
+
+                btnComerciales.classList.remove('border-brand-gold', 'text-brand-navy');
+                btnComerciales.classList.add('border-transparent', 'text-slate-500');
+            }
+        }
+
+        // Simulación de Reproducción de Video IA
+        function playAiVideo() {
+            document.getElementById('video-overlay').classList.add('hidden');
+            document.getElementById('video-playing').classList.remove('hidden');
+        }
+
+        function stopAiVideo() {
+            document.getElementById('video-playing').classList.add('hidden');
+            document.getElementById('video-overlay').classList.remove('hidden');
+        }
+
+        // Lógica del Chatbot Asistente IA
+        function toggleChatbot() {
+            const modal = document.getElementById('chatbot-modal');
+            modal.classList.toggle('hidden');
+        }
+
+        function sendMessage() {
+            const input = document.getElementById('chat-input');
+            const query = input.value.trim();
+            if (!query) return;
+
+            appendUserMessage(query);
+            input.value = '';
+            
+            setTimeout(() => {
+                processBotResponse(query);
+            }, 600);
+        }
+
+        function handleKeyPress(e) {
+            if (e.key === 'Enter') {
+                sendMessage();
+            }
+        }
+
+        function sendQuickQuery(queryText) {
+            appendUserMessage(queryText);
+            setTimeout(() => {
+                processBotResponse(queryText);
+            }, 500);
+        }
+
+        function appendUserMessage(msg) {
+            const container = document.getElementById('chat-messages');
+            const html = `
+                <div class="flex items-start gap-2 justify-end">
+                    <div class="bg-brand-forest text-white p-3 rounded-2xl rounded-tr-none text-xs max-w-[85%] shadow-sm">
+                        ${escapeHtml(msg)}
+                    </div>
+                </div>
+            `;
+            container.insertAdjacentHTML('beforeend', html);
+            container.scrollTop = container.scrollHeight;
+        }
+
+        function processBotResponse(query) {
+            const container = document.getElementById('chat-messages');
+            let responseText = '';
+            let showCta = true;
+
+            const q = query.toLowerCase();
+
+            if (q.includes('maltrato') || q.includes('ley 30407') || q.includes('denunciar')) {
+                responseText = " Para casos de maltrato animal bajo la Ley N° 30407: Se debe interponer denuncia ante la Comisaría (PNP) o Fiscalía penal. Es vital contar con pruebas (fotos, videos, reporte de veterinario colegiado). Nuestro estudio ofrece orientación y patrocinio en casos graves.";
+            } else if (q.includes('comercial') || q.includes('empresa') || q.includes('contrato')) {
+                responseText = " En el área comercial asesoramos en constitución de empresas, estatutos, contratos civiles, laboral patronal y patrocinio procesal regular dirigido por el Dr. Martín Mendoza.";
+            } else if (q.includes('pro bono') || q.includes('albergue') || q.includes('gratis')) {
+                responseText = " Nuestro programa Pro Bono evalúa casos de extrema crueldad o patrocinio a refugios animalistas registrados sin fines de lucro. Requiere previa evaluación de requisitos de elegibilidad.";
+            } else {
+                responseText = " Gracias por tu consulta. Como asistente automatizado solo puedo brindarte información general y clasificatoria.";
+            }
+
+            const ctaButton = showCta ? `
+                <div class="mt-3 pt-2 border-t border-slate-200 flex flex-col gap-1.5">
+                    <a href="https://wa.me/51987654321?text=Hola,%20fui%20derivado%20por%20el%20asistente%20IA" target="_blank" class="bg-emerald-600 text-white font-bold py-1.5 px-3 rounded text-[11px] text-center flex items-center justify-center gap-1.5">
+                        <i class="fa-brands fa-whatsapp text-xs"></i> Hablar con Abogado Humano (WhatsApp)
+                    </a>
+                    <a href="#contacto" onclick="toggleChatbot()" class="bg-slate-800 text-slate-200 font-medium py-1.5 px-3 rounded text-[11px] text-center">
+                        Ir al Formulario de Contacto
+                    </a>
+                </div>
+            ` : '';
+
+            const html = `
+                <div class="flex items-start gap-2">
+                    <div class="w-7 h-7 rounded-full bg-brand-navy text-brand-gold flex items-center justify-center shrink-0 font-bold text-[10px]">IA</div>
+                    <div class="bg-white p-3 rounded-2xl rounded-tl-none border border-slate-200 text-slate-700 shadow-sm max-w-[85%]">
+                        ${responseText}
+                        ${ctaButton}
+                    </div>
+                </div>
+            `;
+
+            container.insertAdjacentHTML('beforeend', html);
+            container.scrollTop = container.scrollHeight;
+        }
+
+        function escapeHtml(text) {
+            return text.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
+        }
+
+        // Modal de Política de Privacidad
+        function openPrivacyModal() {
+            document.getElementById('privacy-modal').classList.remove('hidden');
+        }
+
+        function closePrivacyModal() {
+            document.getElementById('privacy-modal').classList.add('hidden');
+        }
+
+        // Envío Formulario Contacto
+        function handleFormSubmit(e) {
+            e.preventDefault();
+            document.getElementById('contact-form').reset();
+            const successMsg = document.getElementById('form-success-msg');
+            successMsg.classList.remove('hidden');
+            setTimeout(() => {
+                successMsg.classList.add('hidden');
+            }, 6000);
+        }
+    </script>
+</body>
+</html>
